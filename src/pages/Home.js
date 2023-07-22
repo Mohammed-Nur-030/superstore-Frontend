@@ -142,7 +142,7 @@ const Home = () => {
                     <div className='   w-[95vw] flex justify-between px-4 mx-auto pb-3'>
 
                         <div className='offer text-sm pt-2'>
-                            <span className='text-white'>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <a href="/" className='text-white hover:text-green-500'> More Details</a>
+                            <span className='text-white'>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <NavLink to="/" className='text-white hover:text-green-500'> More Details</NavLink>
                         </div>
 
                         <div className=' buttons flex items-center pt-2'>
@@ -165,11 +165,11 @@ const Home = () => {
 
                     <div className=' nav-2  w-[95vw] flex  px-4 mx-auto'>
                         <div className='logo  border-pink-400'>
-                            <a href="#">
+                            <NavLink to="/our-store">
                                 <span className='font-bold text-md  sm:text-base md:text-xl lg:text-2xl text-yellow-500 hover:text-green-500'>
                                     MYSUPERSTORE
                                 </span>
-                            </a>
+                            </NavLink>
 
                         </div>
 
@@ -209,10 +209,10 @@ const Home = () => {
 
                         <div className='navbar flex items-center  ml-auto'>
                             <ul className='  flex gap-3'>
-                                <li className='hover:text-green-400 text-white cursor-pointer mx-2'><a href="/">HOME</a></li>
-                                <li className='text-white hover:text-green-400 cursor-pointer mx-2'><a href="/about">ABOUT</a></li>
-                                <li className='text-white hover:text-green-400 cursor-pointer mx-2'><a href="/our-store">OUR STORE</a></li>
-                                <li className='text-white hover:text-green-400 cursor-pointer mx-2'><a href="/contact">CONTACT</a></li>
+                                <li className='hover:text-green-400 text-white cursor-pointer mx-2'><NavLink to="/">HOME</NavLink></li>
+                                <li className='text-white hover:text-green-400 cursor-pointer mx-2'><NavLink to="/about">ABOUT</NavLink></li>
+                                <li className='text-white hover:text-green-400 cursor-pointer mx-2'><NavLink to="/our-store">OUR STORE</NavLink></li>
+                                <li className='text-white hover:text-green-400 cursor-pointer mx-2'><NavLink to="/contact">CONTACT</NavLink></li>
                                 <button
                                     onClick={handleLogout}
                                     className='text-white hover:text-green-400 cursor-pointer mx-2'>
@@ -246,7 +246,7 @@ const Home = () => {
                                                 setMobileMenu(false);
                                             }}
                                             className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                                        ><a href="/">Home</a></span>
+                                        ><NavLink to="/">Home</NavLink></span>
 
                                     </li>
                                     <li className="py-2">
@@ -256,7 +256,7 @@ const Home = () => {
                                                 setMobileMenu(false);
                                             }}
                                             className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                                        ><a href="/about">About</a></span>
+                                        ><NavLink to="/about">About</NavLink></span>
 
                                     </li>
 
@@ -270,7 +270,7 @@ const Home = () => {
                                                 setMobileMenu(false);
                                             }}
                                             className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                                        ><a href="/our-store">OUR STORE</a></span>
+                                        ><NavLink to="/our-store">OUR STORE</NavLink></span>
 
                                     </li>
 
@@ -282,7 +282,7 @@ const Home = () => {
                                                 setMobileMenu(false);
                                             }}
                                             className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                                        ><a href="/contact">Contact</a></span>
+                                        ><NavLink to="/contact">Contact</NavLink></span>
 
                                     </li>
 
@@ -373,9 +373,9 @@ const Home = () => {
                                         <h3 className='text-white font-bold  py-2 text-4xl'>WOMEN'S
                                             FASHION
                                             <br />40% Off</h3>
-                                        <a href="#" className="text-sm px-2 py-1 rounded-full bg-white hover:bg-green-500 hover:text-white  ">
+                                        <NavLink to="/our-store" className="text-sm px-2 py-1 rounded-full bg-white hover:bg-green-500 hover:text-white  ">
                                             Shop Now
-                                        </a>
+                                        </NavLink>
 
                                     </div>
                                 </div>
@@ -387,9 +387,9 @@ const Home = () => {
                                         <h3 className='text-white font-bold text-4xl py-2'>MEN'S
                                             FASHION
                                             <br />40% Off</h3>
-                                        <a href="#" className="text-sm px-2 py-1 rounded-full bg-white hover:bg-green-500 hover:text-white  ">
+                                        <NavLink to="/our-store" className="text-sm px-2 py-1 rounded-full bg-white hover:bg-green-500 hover:text-white  ">
                                             Shop Now
-                                        </a>
+                                        </NavLink>
 
                                     </div>
                                 </div>
@@ -400,9 +400,9 @@ const Home = () => {
                                         <h3 className='text-white font-bold text-4xl py-2'>WOMEN'S
                                             FASHION
                                             <br />30% Off</h3>
-                                        <a href="#" className="text-sm px-2 py-1 rounded-full bg-white hover:bg-green-500 hover:text-white  ">
+                                        <NavLink to="/our-store" className="text-sm px-2 py-1 rounded-full bg-white hover:bg-green-500 hover:text-white  ">
                                             Shop Now
-                                        </a>
+                                        </NavLink>
 
                                     </div>
                                 </div>
@@ -413,9 +413,9 @@ const Home = () => {
                                     <div className="carousel-caption pl-[20%]">
                                         <h3 className='text-white font-bold text-4xl py-2'>MEN'S FASHION
                                             <br />60% Off</h3>
-                                        <a href="#" className="text-sm px-2 py-1 rounded-full bg-white hover:bg-green-500 hover:text-white  ">
+                                        <NavLink to="/our-store" className="text-sm px-2 py-1 rounded-full bg-white hover:bg-green-500 hover:text-white  ">
                                             Shop Now
-                                        </a>
+                                        </NavLink>
 
                                     </div>
                                 </div>

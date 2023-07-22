@@ -8,6 +8,7 @@ import * as yup from 'yup';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { createQuery } from '../features/contact/contactSlice';
+import { NavLink } from 'react-router-dom';
 
 const contactSchema = yup.object({
   name: yup.string().required("Name is required"),
@@ -19,7 +20,7 @@ const contactSchema = yup.object({
 
 
 const Contact = () => {
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
   const [mobileMenu, setMobileMenu] = useState(false)
   const formik = useFormik({
@@ -31,10 +32,10 @@ const Contact = () => {
       comment: '',
     },
     validationSchema: contactSchema,
-    onSubmit: (values,{resetForm}) => {
+    onSubmit: (values, { resetForm }) => {
       // alert(JSON.stringify(values, null, 2));
-     dispatch(createQuery(values))
-     formik.resetForm();
+      dispatch(createQuery(values))
+      formik.resetForm();
     },
   });
 
@@ -64,7 +65,7 @@ const Contact = () => {
           <div className='   w-[95vw] flex justify-between px-4 mx-auto pb-3'>
 
             <div className='offer text-sm pt-2'>
-              <span className='text-white '>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <a href="/" className='text-white hover:text-green-500'> More Details</a>
+              <span className='text-white '>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <NavLink to="/" className='text-white hover:text-green-500'> More Details</NavLink>
             </div>
 
             <div className=' buttons flex items-center pt-2'>
@@ -81,30 +82,20 @@ const Contact = () => {
 
           <div className=' nav-2  w-[95vw] flex  px-4 mx-auto'>
             <div className='logo'>
-              <a href="#">
+              <NavLink to="#">
                 <span className='font-bold text-xs  sm:text-sm md:text-xl lg:text-2xl text-yellow-500 hover:text-green-500'>
                   MYSUPERSTORE
                 </span>
-              </a>
+              </NavLink>
 
             </div>
-
-            <div className='search  mx-4 text-white'>
-              <a href="#">
-                <div className=' flex items-center gap-2 '>
-                  <BiSearch className='inline-block text-2xl ' />
-                  <span className=' search-text text-xl'>Search here</span>
-                </div>
-              </a>
-            </div>
-
 
             <div className='navbar flex items-center  ml-auto'>
               <ul className='  flex gap-3'>
-                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/">HOME</a></li>
-                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/about">ABOUT</a></li>
-                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/our-store">OUR STORE</a></li>
-                <li className=' hover:text-green-400 cursor-pointer mx-2 text-green-500'><a href="/contact">CONTACT</a></li>
+                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/">HOME</NavLink></li>
+                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/about">ABOUT</NavLink></li>
+                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/our-store">OUR STORE</NavLink></li>
+                <li className=' hover:text-green-400 cursor-pointer mx-2 text-green-500'><NavLink to="/contact">CONTACT</NavLink></li>
               </ul>
             </div>
 
@@ -132,7 +123,7 @@ const Contact = () => {
                         setMobileMenu(false);
                       }}
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    ><a href="/">Home</a></span>
+                    ><NavLink to="/">Home</NavLink></span>
 
                   </li>
                   <li className="py-2">
@@ -142,7 +133,7 @@ const Contact = () => {
                         setMobileMenu(false);
                       }}
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    ><a href="/about">About</a></span>
+                    ><NavLink to="/about">About</NavLink></span>
 
                   </li>
 
@@ -156,7 +147,7 @@ const Contact = () => {
                         setMobileMenu(false);
                       }}
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    ><a href="/our-store">OUR STORE</a></span>
+                    ><NavLink to="/our-store">OUR STORE</NavLink></span>
 
                   </li>
 
@@ -168,7 +159,7 @@ const Contact = () => {
                         setMobileMenu(false);
                       }}
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    ><a href="/contact">Contact</a></span>
+                    ><NavLink to="/contact">Contact</NavLink></span>
 
                   </li>
 
@@ -193,10 +184,10 @@ const Contact = () => {
                 <span className='text-xl  md:text-xl lg:text2xl xl:text-3xl font-bold text-green-500'> TOUCH</span>
               </h3>
               <p className='text-gray-500 pb-4'>We're ready to lead you into the future with Business Services.</p>
-              <p className=""><span className="text-green-500">Call Us : </span> <a href="tel:+(21) 255 999 8899" className='hover:text-green-500 hover:underline'>+(21)
-                255 999 8899</a></p>
-              <p> <span className="text-green-500">Email : </span> <a href="mailto:info@example.com" className='hover:text-green-500 hover:underline '>
-                info@example.com</a></p>
+              <p className=""><span className="text-green-500">Call Us : </span> <NavLink to="tel:+(21) 255 999 8899" className='hover:text-green-500 hover:underline'>+(21)
+                255 999 8899</NavLink></p>
+              <p> <span className="text-green-500">Email : </span> <NavLink to="mailto:info@example.com" className='hover:text-green-500 hover:underline '>
+                info@example.com</NavLink></p>
               <p className="text-gray-500 pt-5"> 433 California St, Suite 300
                 San Francisco, CA 94104, USA </p>
 
@@ -220,12 +211,11 @@ const Contact = () => {
 
           </div>
           <div className="contact-item w-[45%]  ">
-          <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62222.68861425496!2d77.5981345!3d13.0066783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17aea68d5a1f%3A0x3ebab1ebcc4ebcd!2sHM%20Green%20Oak%20Apartments!5e0!3m2!1sen!2sin!4v1562582305883!5m2!1sen!2sin"
-  frameborder="0"
-  allowfullscreen=""
-  className='h-full w-full object-cover'
-></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.4574677758883!2d77.59837990973872!3d13.00651421406082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16515c4376dd%3A0x6014fa2eb0148d63!2sHM%20Green%20Oak%20Apartment%2C%20Anjenappa%20Block%2C%20J.C.Nagar%2C%20Bengaluru%2C%20Karnataka%20560045!5e0!3m2!1sen!2sin!4v1690031217381!5m2!1sen!2sin"
+             allowfullscreen="" 
+             loading="lazy" 
+              className='h-full w-full object-cover'
+             referrerpolicy="no-referrer-when-downgrade"></iframe>
 
           </div>
         </div>
@@ -287,7 +277,7 @@ const Contact = () => {
                       {formik.touched.mobile && formik.errors.mobile}
                     </div>
                   </div>
-                  
+
                 </div>
 
 

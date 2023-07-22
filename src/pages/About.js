@@ -1,4 +1,4 @@
-import React, { useState,useHistory, useContext } from 'react'
+import React, { useState, useHistory, useContext } from 'react'
 import { BiSolidHandRight, BiSolidUser, BiSearch, BiSolidPhoneCall } from 'react-icons/bi';
 import { LiaShippingFastSolid } from 'react-icons/lia'
 import { GiRunningShoe, GiFirewall, GiSleevelessJacket, } from 'react-icons/gi';
@@ -10,14 +10,15 @@ import BreadCrum from '../components/BreadCrum';
 import { Helmet } from 'react-helmet';
 import { AppContext, useProductContext } from '../context/ProductContext';
 import Footer from '../components/Footer';
+import { NavLink } from 'react-router-dom';
+
 
 
 
 const About = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
 
-  const myName=useContext(AppContext);
-  const Name=useProductContext();
+
 
   return (
     <div>
@@ -34,7 +35,7 @@ const About = () => {
                 <title>About Us</title>
                 <meta name="description" content="This is my page description." charSet='utf-8' />
               </Helmet>
-              <BreadCrum title="About Us"  />
+              <BreadCrum title="About Us" />
             </div>
           </div>
 
@@ -45,7 +46,7 @@ const About = () => {
           <div className='   w-[95vw] flex justify-between px-4 mx-auto pb-3'>
 
             <div className='offer text-sm pt-2'>
-              <span className='text-white '>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <a href="/" className='text-white hover:text-green-500'> More Details</a>
+              <span className='text-white '>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <NavLink to="/" className='text-white hover:text-green-500'> More Details</NavLink>
             </div>
 
             <div className=' buttons flex items-center pt-2'>
@@ -62,30 +63,23 @@ const About = () => {
 
           <div className=' nav-2  w-[95vw] flex  px-4 mx-auto'>
             <div className='logo'>
-              <a href="#">
+              <NavLink to="/">
                 <span className='font-bold text-xs  sm:text-sm md:text-xl lg:text-2xl text-yellow-500 hover:text-green-500'>
                   MYSUPERSTORE
                 </span>
-              </a>
+              </NavLink>
 
             </div>
 
-            <div className='search  mx-4 text-white'>
-              <a href="#">
-                <div className=' flex items-center gap-2 '>
-                  <BiSearch className='inline-block text-2xl ' />
-                  <span className=' search-text text-xl'>Search here</span>
-                </div>
-              </a>
-            </div>
+           
 
 
             <div className='navbar flex items-center  ml-auto'>
               <ul className='  flex gap-3'>
-                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/">HOME</a></li>
-                <li className=' hover:text-green-400 cursor-pointer mx-2 text-green-500'><a href="/about">ABOUT</a></li>
-                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/our-store">OUR STORE</a></li>
-                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/contact">CONTACT</a></li>
+                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/">HOME</NavLink></li>
+                <li className=' hover:text-green-400 cursor-pointer mx-2 text-green-500'><NavLink to="/about">ABOUT</NavLink></li>
+                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/our-store">OUR STORE</NavLink></li>
+                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/contact">CONTACT</NavLink></li>
               </ul>
             </div>
 
@@ -113,7 +107,7 @@ const About = () => {
                         setMobileMenu(false);
                       }}
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    ><a href="/">Home</a></span>
+                    ><NavLink to="/">Home</NavLink></span>
 
                   </li>
                   <li className="py-2">
@@ -123,7 +117,7 @@ const About = () => {
                         setMobileMenu(false);
                       }}
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    ><a href="/about">About</a></span>
+                    ><NavLink to="/about">About</NavLink></span>
 
                   </li>
 
@@ -137,7 +131,7 @@ const About = () => {
                         setMobileMenu(false);
                       }}
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    ><a href="/our-store">OUR STORE</a></span>
+                    ><NavLink to="/our-store">OUR STORE</NavLink></span>
 
                   </li>
 
@@ -149,7 +143,7 @@ const About = () => {
                         setMobileMenu(false);
                       }}
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    ><a href="/contact">Contact</a></span>
+                    ><NavLink to="/contact">Contact</NavLink></span>
 
                   </li>
 
@@ -219,7 +213,7 @@ const About = () => {
                 <p className='text-gray-500'>Lorem illum facere aperiam sequi optio consectetur adipisicing elitFuga, suscipit totam animi consequatur.</p>
               </div>
               <div className="about-offer-point w-1/2 py-2">
-                <h3 className='text-base md:text-base lg:text-xl xl:text-2xl font-bold text-gray-900 '>04. ADD TO CART</h3>
+                <h3 className='text-base md:text-base lg:text-xl xl:text-2xl font-bold text-gray-900 '>04. ADD to CART</h3>
                 <p className='text-gray-500'>Lorem illum facere aperiam sequi optio consectetur adipisicing elitFuga, suscipit totam animi consequatur.</p>
               </div>
 
