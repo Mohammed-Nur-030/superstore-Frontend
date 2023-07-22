@@ -3,12 +3,32 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { AppProvider } from './context/ProductContext';
+import { FilterContextProvider } from './context/FilterContext';
+import { CartProvider } from './context/CartContext';
+import { store } from './app/store';
+import {Provider} from 'react-redux'
+import { disableReactDevTools } from '@fvilers/disable-react-devtools';
+
+if(process.env.NODE_ENV==='production') disableReactDevTools()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+
+  // <React.StrictMode>
+  <Provider store={store}>
+  <AppProvider>
+    <FilterContextProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </CartProvider>
+    </FilterContextProvider>
+  </AppProvider>
+  </Provider>
+  // </React.StrictMode> 
 );
 
 // If you want to start measuring performance in your app, pass a function
