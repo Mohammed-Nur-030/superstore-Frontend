@@ -1,4 +1,5 @@
-export const base_url="https://superstore-api.onrender.com/api/"
+export const base_url="https://superstore-backend-r7n2.onrender.com/api/"
+
 
 const getTokenFromLocalStorage = localStorage.getItem("user")
   ? JSON.parse(localStorage.getItem("user"))
