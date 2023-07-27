@@ -114,9 +114,9 @@ const Checkout = () => {
     return (
         <>
 
-            <section className=" py-5  bg-gray-100">
-                <div className="checkout-container container flex  ">
-                    <div className="checkout-item w-1/2">
+            <section className=" py-5  bg-gray-100 min-h-[100vh]">
+                <div className="checkout-container container flex h-[100vh]  ">
+                    <div className=" checkout-item-form w-1/2">
                         <div className="bg-white mx-4 px-2 rounded-md  shadow-gray-200 py-6">
 
                             <h4 className= "  title-checkout total text-center ">Shipping Details</h4>
@@ -297,8 +297,8 @@ const Checkout = () => {
                         </div>
                     </div>
 
-                    <div className="checkout-item w-1/2">
-                        <div className="border-bottom py-4  ">
+                    <div className="checkout-item w-1/2 ">
+                        <div className="product-checkout border-bottom  py-4  ">
                             <div className="flex flex-col mb-2 items-center">
                                 {
                                     cartState && cartState?.cart?.map((item, index) => {
@@ -309,7 +309,7 @@ const Checkout = () => {
                                             <>
                                      
 
-                                            <div key={index} className="w-full h-[140px] flex   my-1 py-4 px-2  shadow-md">
+                                            <div key={index} className="product-checkout w-full h-[140px]   flex   my-1 py-4 px-2  shadow-md">
                                             
                                                 
                                                    

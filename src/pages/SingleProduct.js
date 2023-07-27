@@ -16,7 +16,7 @@ import { addRating, getAProduct, getAllProducts } from '../features/products/pro
 import ProductCard from '../components/ProductCard';
 import { toast } from 'react-toastify';
 import { addProdToCart, getUserCart } from '../features/user/userSlice';
-
+import Signup from './Signup';
 
 
 
@@ -124,6 +124,10 @@ const SingleProduct = () => {
       </>
     )
   }
+    
+  if (!localStorage.getItem("user")) {
+    return( <Signup></Signup>)
+}
 
   const category=prodState?.category;
   // console.log("category")
@@ -141,7 +145,7 @@ const SingleProduct = () => {
         <div className='   w-[95vw] flex justify-between px-4 mx-auto pb-3'>
 
           <div className='offer text-sm pt-2'>
-            <span className='text-white '>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <a href="/" className='text-white hover:text-green-500'> More Details</a>
+            <span className='text-white '>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <a to="/" className='text-white hover:text-green-500'> More Details</a>
           </div>
 
           <div className=' buttons flex items-center pt-2'>
@@ -180,10 +184,10 @@ const SingleProduct = () => {
 
           <div className='navbar flex items-center  ml-auto'>
             <ul className='  flex gap-3'>
-              <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/">HOME</a></li>
-              <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/about">ABOUT</a></li>
-              <li className=' hover:text-green-400 cursor-pointer mx-2 text-green-500'><a href="/our-store">OUR STORE</a></li>
-              <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/contact">CONTACT</a></li>
+              <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/">HOME</NavLink></li>
+              <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/about">ABOUT</NavLink></li>
+              <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/our-store">OUR STORE</NavLink></li>
+              <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/contact">CONTACT</NavLink></li>
             </ul>
           </div>
 
@@ -212,7 +216,7 @@ const SingleProduct = () => {
                       setMobileMenu(false);
                     }}
                     className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                  ><a href="/">Home</a></span>
+                  ><NavLink to="/">Home</NavLink></span>
 
                 </li>
                 <li className="py-2">
@@ -222,7 +226,7 @@ const SingleProduct = () => {
                       setMobileMenu(false);
                     }}
                     className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                  ><a href="/about">About</a></span>
+                  ><NavLink to="/about">About</NavLink></span>
 
                 </li>
 
@@ -236,7 +240,7 @@ const SingleProduct = () => {
                       setMobileMenu(false);
                     }}
                     className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                  ><a href="/our-store">OUR STORE</a></span>
+                  ><NavLink to="/our-store">OUR STORE</NavLink></span>
 
                 </li>
 
@@ -248,7 +252,7 @@ const SingleProduct = () => {
                       setMobileMenu(false);
                     }}
                     className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                  ><a href="/contact">Contact</a></span>
+                  ><NavLink to="/contact">Contact</NavLink></span>
 
                 </li>
 
@@ -388,7 +392,7 @@ const SingleProduct = () => {
                 className="py-3 px-4 rounded-full bg-green-500 text-white hover:bg-green-600 mx-10 my-4"
                 onClick={() => {
                   if (!localStorage.getItem("user")) {
-                    navigate('/login')
+                    navigate('/signup')
                   } else {
 
                     uploadCart(prodState?._id)

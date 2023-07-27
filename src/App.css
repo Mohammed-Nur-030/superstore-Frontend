@@ -520,6 +520,21 @@ color: white;
     height: 18px;
     /* display: none; */
   }
+  .checkout-container{
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .checkout-item{
+    width: 100%;
+
+    height: 50%;
+  }
+  .checkout-item-form{
+    width: 100%;
+
+    height: auto;
+  }
+
 
   
 
@@ -624,6 +639,7 @@ color: white;
    padding-left: 12px;
    padding-right: 12px;
   }
+
   
 }
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Noticia+Text:ital@1&display=swap");

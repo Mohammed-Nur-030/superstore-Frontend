@@ -109,7 +109,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="w-1/2 m-3 footer-final-content">
-              <h3 className='text-md text-[#a09292]'>© 2020 SpryStore. All rights reserved. Design by W3Layouts</h3>
+              <h3 className='text-md text-[#a09292]'>© 2023 Galileo-store. All rights reserved.</h3>
             </div>
 
 

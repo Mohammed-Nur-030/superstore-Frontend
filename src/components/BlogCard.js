@@ -10,6 +10,7 @@ const removeHTMLTags = (html) => {
 
 const BlogCard = (props) => {
     const { id, date, description, image } = props;
+    console.log(image)
    
 const newDate = new Date(date);
 
@@ -47,7 +48,7 @@ const final=removeHTMLTags(textUntilFirstPTag)
 
                         <div className="parent h-1/2 rounded-t-md w-full ">
                             
-                                <img src={image} alt="wishlist" className=' child object-cover h-full w-full rounded-t-md' />
+                                <img src={image?(image):('public/images/bg2.jpg')} alt="wishlist" className=' child object-cover h-full w-full rounded-t-md' />
                             
                         </div>  
 

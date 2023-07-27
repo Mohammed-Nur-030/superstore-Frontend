@@ -132,7 +132,7 @@ const OurStore = () => {
           <div className='   w-[95vw] flex justify-between px-4 mx-auto pb-3'>
 
             <div className='offer text-sm pt-2'>
-              <span className='text-white '>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <a href="/" className='text-white hover:text-green-500'> More Details</a>
+              <span className='text-white '>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <a to="/" className='text-white hover:text-green-500'> More Details</a>
             </div>
 
             <div className=' buttons flex items-center pt-2'>
@@ -141,7 +141,7 @@ const OurStore = () => {
               </button>
 
               <button className='nav-btn p-2 mx-2 rounded-full  text-sm hover:bg-green-500 text-white '>
-                <NavLink to="">
+                <NavLink to="/cart">
                   My Cart<ImCart className='inline-block text-sm ' />
                 </NavLink>
               </button>
@@ -151,30 +151,23 @@ const OurStore = () => {
 
           <div className=' nav-2  w-[95vw] flex  px-4 mx-auto'>
             <div className='logo'>
-              <a href="#">
-                <span className='font-bold text-xs  sm:text-sm md:text-xl lg:text-2xl text-yellow-500 hover:text-green-500'>
+              <NavLink to="/">
+                <span className='font-bold text-xs  sm:text-sm md:text-xl lg:text-2xl text-green-500'>
                   MYSUPERSTORE
                 </span>
-              </a>
+              </NavLink>
 
             </div>
 
-            <div className='search  mx-4 text-white'>
-              <a href="#">
-                <div className=' flex items-center gap-2 '>
-                  <BiSearch className='inline-block text-2xl ' />
-                  <span className=' search-text text-xl'>Search here</span>
-                </div>
-              </a>
-            </div>
+
 
 
             <div className='navbar flex items-center  ml-auto'>
               <ul className='  flex gap-3'>
-                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/">HOME</a></li>
-                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/about">ABOUT</a></li>
-                <li className=' hover:text-green-400 cursor-pointer mx-2 text-green-500'><a href="/our-store">OUR STORE</a></li>
-                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/contact">CONTACT</a></li>
+                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/">HOME</NavLink></li>
+                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/about">ABOUT</NavLink></li>
+                <li className=' hover:text-green-400 cursor-pointer mx-2 text-green-500'><NavLink to="/our-store">OUR STORE</NavLink></li>
+                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/contact">CONTACT</NavLink></li>
               </ul>
             </div>
 
@@ -202,7 +195,7 @@ const OurStore = () => {
                         setMobileMenu(false);
                       }}
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    ><a href="/">Home</a></span>
+                    ><NavLink to="/">Home</NavLink></span>
 
                   </li>
                   <li className="py-2">
@@ -212,7 +205,7 @@ const OurStore = () => {
                         setMobileMenu(false);
                       }}
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    ><a href="/about">About</a></span>
+                    ><NavLink to="/about">About</NavLink></span>
 
                   </li>
 
@@ -226,7 +219,7 @@ const OurStore = () => {
                         setMobileMenu(false);
                       }}
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    ><a href="/our-store">OUR STORE</a></span>
+                    ><NavLink to="/our-store">OUR STORE</NavLink></span>
 
                   </li>
 
@@ -238,7 +231,7 @@ const OurStore = () => {
                         setMobileMenu(false);
                       }}
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    ><a href="/contact">Contact</a></span>
+                    ><NavLink to="/contact">Contact</NavLink></span>
 
                   </li>
 
@@ -255,9 +248,9 @@ const OurStore = () => {
 
 
 
-      <section className="our-products">
-        <div className="container flex ">
-          <div className='w-[25%] bg-gray-200 rounded-md'>
+      <section className="our-products ">
+        <div className="container flex  ">
+          <div className='w-[25%] bg-gray-200 rounded-md py-8'>
             {/* <FilterSection /> */}
             <section className='px-2'>
 
@@ -327,7 +320,7 @@ const OurStore = () => {
             </section>
           </div>
 
-          <div className='product-view--sort w-[75%]'>
+          <div className='product-view--sort w-[75%] py-8'>
             <div className="sort-filter">
               {/* <Sort productState={productState}/> */}
               <section className="sort">
@@ -370,7 +363,8 @@ const OurStore = () => {
                 </div>
               </section>
             </div>
-            <div className="main-product mx-2 ">
+
+            <div className="main-product mx-6  w-full py-6">
               <ProductList />
             </div>
 

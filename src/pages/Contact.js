@@ -73,9 +73,11 @@ const Contact = () => {
                 <BiSolidUser className='inline-block border-white text-xl ' />
               </button>
 
+                  <NavLink to="/cart">
               <button className='nav-btn p-2 mx-2 rounded-full  text-sm hover:bg-green-500 text-white '>
                 My Cart<ImCart className='inline-block text-sm ' />
               </button>
+                  </NavLink>
             </div>
 
           </div>

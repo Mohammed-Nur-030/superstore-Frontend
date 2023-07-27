@@ -35,8 +35,8 @@ const Cart = () => {
             }
             setTotalAmount(sum);
         },[dispatch])
-        // console.log("totalAmount")
-        // console.log(totalAmount)
+        console.log("totalAmount")
+        console.log(totalAmount)
         const deleteACartProduct=(id)=>{
             dispatch(deleteCartItem(id))
             setTimeout(()=>{
@@ -67,13 +67,15 @@ const Cart = () => {
                         <div className='   w-[95vw] flex justify-between px-4 mx-auto pb-3'>
 
                             <div className='offer text-sm pt-2'>
-                                <span className='text-white '>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <a href="/" className='text-white hover:text-green-500'> More Details</a>
+                                <span className='text-white '>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <a to="/" className='text-white hover:text-green-500'> More Details</a>
                             </div>
 
                             <div className=' buttons flex items-center pt-2'>
+                                <NavLink to="/login">
                                 <button className='nav-btn px-[10px] py-2  rounded-full hover:bg-green-500 text-white '>
                                     <BiSolidUser className='inline-block border-white text-xl ' />
                                 </button>
+                                </NavLink>
 
                                 <NavLink to="/cart">
                                     <button className=' p-2 mx-2 rounded-full  text-sm bg-green-500 text-white linear flex justify-center items-center gap-1 '>
@@ -86,30 +88,23 @@ const Cart = () => {
 
                         <div className=' nav-2  w-[95vw] flex  px-4 mx-auto'>
                             <div className='logo'>
-                                <a href="#">
+                                <NavLink to="/">
                                     <span className='font-bold text-xs  sm:text-sm md:text-xl lg:text-2xl text-yellow-500 hover:text-green-500'>
                                         MYSUPERSTORE
                                     </span>
-                                </a>
+                                </NavLink>
 
                             </div>
 
-                            <div className='search  mx-4 text-white'>
-                                <a href="#">
-                                    <div className=' flex items-center gap-2 '>
-                                        <BiSearch className='inline-block text-2xl ' />
-                                        <span className=' search-text text-xl'>Search here</span>
-                                    </div>
-                                </a>
-                            </div>
+                           
 
 
                             <div className='navbar flex items-center  ml-auto'>
                                 <ul className='  flex gap-3'>
-                                    <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/">HOME</a></li>
-                                    <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/about">ABOUT</a></li>
-                                    <li className=' hover:text-green-400 cursor-pointer mx-2 text-green-500'><a href="/our-store">OUR STORE</a></li>
-                                    <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/contact">CONTACT</a></li>
+                                    <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/">HOME</NavLink></li>
+                                    <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/about">ABOUT</NavLink></li>
+                                    <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/our-store">OUR STORE</NavLink></li>
+                                    <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/contact">CONTACT</NavLink></li>
                                 </ul>
                             </div>
 
@@ -137,7 +132,7 @@ const Cart = () => {
                                                     setMobileMenu(false);
                                                 }}
                                                 className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                                            ><a href="/">Home</a></span>
+                                            ><NavLink to="/">Home</NavLink></span>
 
                                         </li>
                                         <li className="py-2">
@@ -147,7 +142,7 @@ const Cart = () => {
                                                     setMobileMenu(false);
                                                 }}
                                                 className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                                            ><a href="/about">About</a></span>
+                                            ><NavLink to="/about">About</NavLink></span>
 
                                         </li>
 
@@ -161,7 +156,7 @@ const Cart = () => {
                                                     setMobileMenu(false);
                                                 }}
                                                 className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                                            ><a href="/our-store">OUR STORE</a></span>
+                                            ><NavLink to="/our-store">OUR STORE</NavLink></span>
 
                                         </li>
 
@@ -173,7 +168,7 @@ const Cart = () => {
                                                     setMobileMenu(false);
                                                 }}
                                                 className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                                            ><a href="/contact">Contact</a></span>
+                                            ><NavLink to="/contact">Contact</NavLink></span>
 
                                         </li>
 
@@ -239,7 +234,7 @@ const Cart = () => {
                     <div className='   w-[95vw] flex justify-between px-4 mx-auto pb-3'>
 
                         <div className='offer text-sm pt-2'>
-                            <span className='text-white '>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <a href="/" className='text-white hover:text-green-500'> More Details</a>
+                            <span className='text-white '>UPTO 30% OFF ON ALL STYLES , Click here for </span> <BiSolidHandRight className=' inline-block inverted-image' /> <a to="/" className='text-white hover:text-green-500'> More Details</a>
                         </div>
 
                         <div className=' buttons flex items-center pt-2'>
@@ -256,7 +251,7 @@ const Cart = () => {
 
                     <div className=' nav-2  w-[95vw] flex  px-4 mx-auto'>
                         <div className='logo'>
-                            <a href="#">
+                            <a to="#">
                                 <span className='font-bold text-xs  sm:text-sm md:text-xl lg:text-2xl text-yellow-500 hover:text-green-500'>
                                     MYSUPERSTORE
                                 </span>
@@ -264,22 +259,15 @@ const Cart = () => {
 
                         </div>
 
-                        <div className='search  mx-4 text-white'>
-                            <a href="#">
-                                <div className=' flex items-center gap-2 '>
-                                    <BiSearch className='inline-block text-2xl ' />
-                                    <span className=' search-text text-xl'>Search here</span>
-                                </div>
-                            </a>
-                        </div>
+
 
 
                         <div className='navbar flex items-center  ml-auto'>
                             <ul className='  flex gap-3'>
-                                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/">HOME</a></li>
-                                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/about">ABOUT</a></li>
-                                <li className=' hover:text-green-400 cursor-pointer mx-2 text-green-500'><a href="/our-store">OUR STORE</a></li>
-                                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><a href="/contact">CONTACT</a></li>
+                                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/">HOME</NavLink></li>
+                                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/about">ABOUT</NavLink></li>
+                                <li className=' hover:text-green-400 cursor-pointer mx-2 text-green-500'><NavLink to="/our-store">OUR STORE</NavLink></li>
+                                <li className=' hover:text-green-400 cursor-pointer mx-2 text-white'><NavLink to="/contact">CONTACT</NavLink></li>
                             </ul>
                         </div>
 
@@ -307,7 +295,7 @@ const Cart = () => {
                                                 setMobileMenu(false);
                                             }}
                                             className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                                        ><a href="/">Home</a></span>
+                                        ><NavLink to="/">Home</NavLink></span>
 
                                     </li>
                                     <li className="py-2">
@@ -317,7 +305,7 @@ const Cart = () => {
                                                 setMobileMenu(false);
                                             }}
                                             className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                                        ><a href="/about">About</a></span>
+                                        ><NavLink to="/about">About</NavLink></span>
 
                                     </li>
 
@@ -331,7 +319,7 @@ const Cart = () => {
                                                 setMobileMenu(false);
                                             }}
                                             className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                                        ><a href="/our-store">OUR STORE</a></span>
+                                        ><NavLink to="/our-store">OUR STORE</NavLink></span>
 
                                     </li>
 
@@ -343,7 +331,7 @@ const Cart = () => {
                                                 setMobileMenu(false);
                                             }}
                                             className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                                        ><a href="/contact">Contact</a></span>
+                                        ><NavLink to="/contact">Contact</NavLink></span>
 
                                     </li>
 
@@ -383,7 +371,7 @@ const Cart = () => {
                 </div>
                 {/* <hr /> */}
                 <div className="cart-two-button flex justify-around py-4">
-                    <NavLink to="/products">
+                    <NavLink to="/our-store">
                         <button className="px-2 py-1 bg-green-400 text-white hover:bg-green-500 rounded-full"> continue Shopping </button>
                     </NavLink>
           
